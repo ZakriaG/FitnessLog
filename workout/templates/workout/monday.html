@@ -5,34 +5,37 @@
 {% load static %}
 
 <h1>Upper 1</h1>
-<h4>Superset</h4>
+<b>Superset</b>
 <p>4 runder<br>
 Floor Press, Dumbbell: 4 sæt x 10-15 reps<br>
 Bent Over Row, Barbell: 4 sæt x 10-15 reps</p>
 <div class="img-with-text">
-    <img src="{% static '/images/workout_illustration/FloorPress_Dumbbell.png' %}" alt="sometext" />
+    <img src="{% static '/images/workout_illustration/FloorPress_Dumbbell.png' %}"
+         width="500" height="200" alt="sometext" />
 </div>
 <div class="img-with-text">
-    <img src="{% static '/images/workout_illustration/BentOverRow_Barbell.png' %}" alt="sometext" />
-    <p style="word-wrap: break-word; max-width: 50ch;">
+    <img src="{% static '/images/workout_illustration/BentOverRow_Barbell.png' %}"
+         width="500" height="250"
+         alt="sometext" />
+    <p style="word-wrap: break-word; max-width: 50ch; color:rgb(170,170,170);">
         "Her skal du have 10-15 reps i begge øvelser,
     begge øvelser køres med kontinuerligt tempo,
     hverken langsomt eller hurtigt, men et godt "normalt" tempo."</p>
 </div>
 
 
-
-
-<h4>Superset</h4>
+<b>Superset</b>
 <p>4 runder<br>
 Shoulder Press, Dumbbell, Standing: 4 sæt x 8-12 reps<br>
 Lateral Raise, Dumbbell: 4 sæt x 10-12 reps</p>
 <div class="img-with-text">
-    <img src="{% static '/images/workout_illustration/ShoulderPress_Dumbbell.png' %}" alt="sometext" />
+    <img src="{% static '/images/workout_illustration/ShoulderPress_Dumbbell.png' %}"
+         width="280" height="310" alt="sometext" />
 </div>
 <div class="img-with-text">
-    <img src="{% static '/images/workout_illustration/LateralRaise_Dumbbell.png' %}" alt="sometext" />
-    <p style="word-wrap: break-word; max-width: 50ch;">
+    <img src="{% static '/images/workout_illustration/LateralRaise_Dumbbell.png' %}"
+         width="310" height="250" alt="sometext" />
+    <p style="word-wrap: break-word; max-width: 50ch; color:rgb(170,170,170);">
         "Her der skal du have 8-12 reps med stående skulderpres,
         og her der skal du presse eksplosivt op &
         kontrollerer den excentriske fase (På vej i bevægelsen)
@@ -45,18 +48,19 @@ Lateral Raise, Dumbbell: 4 sæt x 10-12 reps</p>
 
 
 
-
-<h4>Superset</h4>
+<b>Superset</b>
 <p>4 runder<br>
 Bicep Curl, Standing, Dumbbell: 4 sæt x 10-12 reps<br>
 Tricep Extension, Dumbbell, Lying: 4 sæt x 10-12 reps</p>
 <div class="img-with-text">
-    <img src="{% static '/images/workout_illustration/ShoulderPress_Dumbbell.png' %}" alt="sometext" />
+    <img src="{% static '/images/workout_illustration/BicepCurlStanding_Dumbbell.png' %}"
+         width="280" height="300"  alt="sometext" />
 </div>
 <div class="img-with-text">
-    <img src="{% static '/images/workout_illustration/LateralRaise_Dumbbell.png' %}" alt="sometext" />
-    <p style="word-wrap: break-word; max-width: 50ch;">
-        ""TIl armtøjet! 10-12 reps i begge øvelser og dine triceps
+    <img src="{% static '/images/workout_illustration/TricepExtension_Dumbbell.png' %}"
+         width="500" height="250"  alt="sometext" />
+    <p style="word-wrap: break-word; max-width: 50ch; color:rgb(170,170,170);">
+        "TIl armtøjet! 10-12 reps i begge øvelser og dine triceps
         extensions kan du SAGTENS lave liggende på gulvet.
         Bicep curl:
         Squeeze op og spænd i armen på toppen & brug ca.
@@ -67,5 +71,27 @@ Tricep Extension, Dumbbell, Lying: 4 sæt x 10-12 reps</p>
 Her kan du også bruge din stang."</p>
 </div>
 
+<b>Bent Over Row, Dumbbell</b>
+<p>4 sæt x 12-14 reps</p>
+<div class="img-with-text">
+    <img src="{% static '/images/workout_illustration/BentOverRow_Dumbbell.png' %}"
+         width="280" height="280" alt="sometext" />
+    <p style="word-wrap: break-word; max-width: 50ch; color:rgb(170,170,170);">
+        "Kør 12-14 reps her, du skal helt ned og strække og helt op og klemme!"</p>
+</div>
+
+<b>Crunch</b>
+<p>5 sæt x 12-30 reps</p>
+<div class="img-with-text">
+    <img src="{% static '/images/workout_illustration/Crunch.png' %}"
+         width="280" height="250"  alt="sometext" />
+    <p style="word-wrap: break-word; max-width: 50ch; color:rgb(170,170,170);">
+        "Sidste for i dag, og det bliver helt alm. mavebøjninger,
+        dog kan du OGSÅ svinge benene op på sofaen
+        imens du ligger på gulvet, det ville gøre dem lidt svære.
+        Du skal have alt fra 12-30 reps, dvs. "Så mange du kan" så
+        tag så mange du nu engang kan og hold herefter 45 sek.
+        så forfra, osv. til du har lavet 5 sæt i alt :)"</p>
+</div>
 
 {% endblock content %}
