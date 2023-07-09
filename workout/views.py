@@ -8,7 +8,7 @@ def meal(request):
     return render(request, "./meal/index.html")
 
 def workout(request):
-    return render(request, "./workout/index.html")
+    return render(request, "./workout/baseWorkout.html")
 
 def workout_monday(request):
     return render(request, "./workout/monday.html")

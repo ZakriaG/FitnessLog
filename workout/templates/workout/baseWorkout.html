@@ -4,11 +4,11 @@
 
 {% block template %}
 {% include "../base/navbar.html" %}
-<button type="button" class="btn btn-outline-primary" > <a data-href="{% url 'workout_monday' %}">Monday</a> </button>
+<button type="button" class="btn btn-outline-primary"> <a data-href="{% url 'workout_monday' %}">Monday</a> </button>
 <button type="button" class="btn btn-outline-secondary" data-href="{% url 'workout_tuesday' %}">Tuesday</button>
 <button type="button" class="btn btn-outline-success" data-href="{% url 'workout_wednesday' %}">Wednesday</button>
 <button type="button" class="btn btn-outline-danger" data-href="{% url 'workout_thursday' %}">Thursday</button>
 <button type="button" class="btn btn-outline-warning" data-href="{% url 'workout_friday' %}">Friday</button>
 <button type="button" class="btn btn-outline-info" data-href="{% url 'workout_saturday' %}">Saturday</button>
 <button type="button" class="btn btn-outline-dark" data-href="{% url 'workout_sunday' %}">Sunday</button>
-{% endblock %}
+{% endblock template %}

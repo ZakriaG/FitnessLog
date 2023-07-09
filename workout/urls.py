@@ -12,5 +12,4 @@ urlpatterns = [
     path('workout', views.workout_friday, name="workout_friday"),
     path('workout', views.workout_saturday, name="workout_saturday"),
     path('workout', views.workout_sunday, name="workout_sunday")
-
 ]
