@@ -1,7 +1,6 @@
 {% extends "../base/base.html" %}
 {% block title %}Pump it{% endblock %}
 
-
 {% block template %}
 {% include "../base/navbar.html" %}
 <button type="button" class="btn btn-outline-primary"> <a data-href="{% url 'workout_monday' %}">Monday</a> </button>
@@ -12,3 +11,4 @@
 <button type="button" class="btn btn-outline-info" data-href="{% url 'workout_saturday' %}">Saturday</button>
 <button type="button" class="btn btn-outline-dark" data-href="{% url 'workout_sunday' %}">Sunday</button>
 {% endblock template %}
+

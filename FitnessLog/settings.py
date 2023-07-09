@@ -126,7 +126,7 @@ MEDIA_URL = '/images/'
 
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "workout/static")
+    os.path.join(BASE_DIR, "workout/static"),
 ]
 
 # Default primary key field type

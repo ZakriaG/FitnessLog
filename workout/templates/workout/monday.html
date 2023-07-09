@@ -2,5 +2,70 @@
 {% block title %}Pump Monday{% endblock %}
 
 {% block content %}
-<h1>Hello, world!</h1>
+{% load static %}
+
+<h1>Upper 1</h1>
+<h4>Superset</h4>
+<p>4 runder<br>
+Floor Press, Dumbbell: 4 sæt x 10-15 reps<br>
+Bent Over Row, Barbell: 4 sæt x 10-15 reps</p>
+<div class="img-with-text">
+    <img src="{% static '/images/workout_illustration/FloorPress_Dumbbell.png' %}" alt="sometext" />
+</div>
+<div class="img-with-text">
+    <img src="{% static '/images/workout_illustration/BentOverRow_Barbell.png' %}" alt="sometext" />
+    <p style="word-wrap: break-word; max-width: 50ch;">
+        "Her skal du have 10-15 reps i begge øvelser,
+    begge øvelser køres med kontinuerligt tempo,
+    hverken langsomt eller hurtigt, men et godt "normalt" tempo."</p>
+</div>
+
+
+
+
+<h4>Superset</h4>
+<p>4 runder<br>
+Shoulder Press, Dumbbell, Standing: 4 sæt x 8-12 reps<br>
+Lateral Raise, Dumbbell: 4 sæt x 10-12 reps</p>
+<div class="img-with-text">
+    <img src="{% static '/images/workout_illustration/ShoulderPress_Dumbbell.png' %}" alt="sometext" />
+</div>
+<div class="img-with-text">
+    <img src="{% static '/images/workout_illustration/LateralRaise_Dumbbell.png' %}" alt="sometext" />
+    <p style="word-wrap: break-word; max-width: 50ch;">
+        "Her der skal du have 8-12 reps med stående skulderpres,
+        og her der skal du presse eksplosivt op &
+        kontrollerer den excentriske fase (På vej i bevægelsen)
+        her bruger du ca. 2-3 sekunder ned, pauser kort i bunden
+        inden du eksploderer op igen. Herefter laver du 10-12
+        reps i lateral raises, og der skal du kører "normalt"
+        tempo op, men holde godt igen på vej ned i den excentriske fase!"</p>
+</div>
+
+
+
+
+
+<h4>Superset</h4>
+<p>4 runder<br>
+Bicep Curl, Standing, Dumbbell: 4 sæt x 10-12 reps<br>
+Tricep Extension, Dumbbell, Lying: 4 sæt x 10-12 reps</p>
+<div class="img-with-text">
+    <img src="{% static '/images/workout_illustration/ShoulderPress_Dumbbell.png' %}" alt="sometext" />
+</div>
+<div class="img-with-text">
+    <img src="{% static '/images/workout_illustration/LateralRaise_Dumbbell.png' %}" alt="sometext" />
+    <p style="word-wrap: break-word; max-width: 50ch;">
+        ""TIl armtøjet! 10-12 reps i begge øvelser og dine triceps
+        extensions kan du SAGTENS lave liggende på gulvet.
+        Bicep curl:
+        Squeeze op og spænd i armen på toppen & brug ca.
+        2 sekunder ned i den excentriske fase.
+        Tricep extensions:
+        Kontrollér vægten på vej ned mod dit hoved (Bag dit hoved)
+        og squeeze så alt op du kan i dine triceps og hold spændet på toppen kort.
+Her kan du også bruge din stang."</p>
+</div>
+
+
 {% endblock content %}
