@@ -4,6 +4,13 @@
 {% block content %}
 {% load static %}
 
+
+</head>
+<body>
+  <table>
+    <tr>
+      <td>
+
 <h1>Upper 1</h1>
 <b>Superset</b>
 <p>4 runder<br>
@@ -22,6 +29,16 @@ Bent Over Row, Barbell: 4 sæt x 10-15 reps</p>
     begge øvelser køres med kontinuerligt tempo,
     hverken langsomt eller hurtigt, men et godt "normalt" tempo."</p>
 </div>
+</td>
+      <td>
+
+  <table>
+      {% include "includes/table_workout.html" %}
+  </table>
+</td>
+</tr>
+</table>
+</body>
 
 
 <b>Superset</b>
@@ -93,5 +110,6 @@ Her kan du også bruge din stang."</p>
         tag så mange du nu engang kan og hold herefter 45 sek.
         så forfra, osv. til du har lavet 5 sæt i alt :)"</p>
 </div>
+
 
 {% endblock content %}
