@@ -1,0 +1,31 @@
+{% load static %}
+
+<body>
+<table>
+    <tr>
+        <td>
+            <h1>Upper {{ super_set_nr }}</h1>
+            <b>Superset</b>
+            <p>{{ supersets }} Sets<br>
+                {{ exercise1 }}: {{ supersets }} sæt x {{ reps }} reps<br>
+                {{ exercise2 }}: {{ supersets }} sæt x {{ reps }}  reps</p>
+            <div class="img-with-text">
+                <img src="{% static '/images/workout_illustration/FloorPress_Dumbbell.png' %}"
+                     width="500" height="200" alt="sometext"/>
+            </div>
+            <div class="img-with-text">
+                <img src="{% static '/images/workout_illustration/BentOverRow_Barbell.png' %}"
+                     width="500" height="250"
+                     alt="sometext"/>
+                <p style="word-wrap: break-word; max-width: 50ch; color:rgb(170,170,170);">
+                    {{ exercise_description }}</p>
+            </div>
+        </td>
+        <td>
+            <table>
+                {{ overview_table }}
+            </table>
+        </td>
+    </tr>
+</table>
+</body>

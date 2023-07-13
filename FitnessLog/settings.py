@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import re
+from django.template import base
 from pathlib import Path
 import os
 from dotenv import load_dotenv
@@ -135,3 +136,5 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #LOGIN_REDIRECT_URL = "index"
 #LOGOUT_REDIRECT_URL = "home"
+
+base.tag_re = re.compile(base.tag_re.pattern, re.DOTALL)
