@@ -18,18 +18,12 @@ def workout(request):
 def workout_monday(response):
     if response.method == "POST":
         form = CreateNewWorkoutLog(response.POST)
-        print(f"n={form}")
-        ExerciseName = response.POST.get('ExerciseName')
-        Set1Weight = form.cleaned_data["Set1Weight"]
-        Set2Weight = form.cleaned_data["Set2Weight"]
-        Set3Weight = form.cleaned_data["Set3Weight"]
-        Set4Weight = form.cleaned_data["Set4Weight"]
-        print(f"ExerciseName={ExerciseName}")
-        print(f"n={Set1Weight}")
-        print(f"n={Set2Weight}")
-        print(f"n={Set3Weight}")
-        print(f"n={Set4Weight}")
         if form.is_valid():
+            ExerciseName = response.POST.get('ExerciseName')
+            Set1Weight = form.cleaned_data["Set1Weight"]
+            Set2Weight = form.cleaned_data["Set2Weight"]
+            Set3Weight = form.cleaned_data["Set3Weight"]
+            Set4Weight = form.cleaned_data["Set4Weight"]
             w = WorkOutLog(ExerciseName=ExerciseName,
                            Set1Weight=Set1Weight,
                            Set2Weight=Set2Weight,
