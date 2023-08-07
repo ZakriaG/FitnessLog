@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .forms import WorkoutLog
+from .forms import CreateNewWorkoutLog
+from .models import WorkOutLog
 
 # Create your views here.
 def myview(request):
@@ -16,25 +17,28 @@ def workout(request):
 
 def workout_monday(response):
     if response.method == "POST":
-        form = WorkoutLog(response.POST)
-        print("triggered")
+        form = CreateNewWorkoutLog(response.POST)
         print(f"n={form}")
-        #n = form.cleaned_data["weight"]ExerciseName
-        ExerciseName = form.cleaned_data["ExerciseName"]
+        ExerciseName = response.POST.get('ExerciseName')
         Set1Weight = form.cleaned_data["Set1Weight"]
         Set2Weight = form.cleaned_data["Set2Weight"]
         Set3Weight = form.cleaned_data["Set3Weight"]
         Set4Weight = form.cleaned_data["Set4Weight"]
         print(f"ExerciseName={ExerciseName}")
+        print(f"n={Set1Weight}")
         print(f"n={Set2Weight}")
         print(f"n={Set3Weight}")
         print(f"n={Set4Weight}")
         if form.is_valid():
-            w = WorkOutLog(name=n, nweight=w)
+            w = WorkOutLog(ExerciseName=ExerciseName,
+                           Set1Weight=Set1Weight,
+                           Set2Weight=Set2Weight,
+                           Set3Weight=Set3Weight,
+                           Set4Weight=Set4Weight)
             w.save()
         #return HttpResponseRedirect("/%i" %t.id)
     else:
-        form = WorkoutLog()
+        form = CreateNewWorkoutLog()
     return render(response, "./workout/monday.html", {"form": form})
 
 

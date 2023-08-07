@@ -5,9 +5,13 @@ from django.db import models
 
 class WorkOutLog(models.Model):
     # name of the exercise:
-    name = models.CharField(max_length=200)
+    ExerciseName = models.CharField(max_length=200)
+
     # Weight in kg:
-    weight = models.IntegerField()
+    Set1Weight = models.IntegerField()
+    Set2Weight = models.IntegerField()
+    Set3Weight = models.IntegerField()
+    Set4Weight = models.IntegerField()
     # Time Stamp:
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
