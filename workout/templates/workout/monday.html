@@ -3,176 +3,177 @@
 
 {% block content %}
 {% load static %}
+
 <style>
-html, body {
-    height: 100%;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
+
+/* Create three equal columns that sits next to each other */
+.column {
+  flex: 50%;
 }
-table {
-  width: 100% ;
-}
-td {
-  width: 100% ;
+.row{
+  display:flex;
+  width:100%;
 }
 </style>
-
-
+</head>
 
 <h1>Upper 1</h1>
-<body>
-<table>
-    <tr>
-        <td>
-            <b>Superset</b>
-                <p>Floor Press, Dumbbell: 4 sæt x 10-15 reps<br>
-                Bent Over Row, Barbell: 4 sæt x 10-15 reps</p>
-            <div class="imgwithtext">
-                <img src="{% static '/images/workout_illustration/FloorPress_Dumbbell.png' %}"
-                      style="height: 40%; width: 40%;" />
-            </div>
-            <div class="imgwithtext">
-                <img src="{% static '/images/workout_illustration/BentOverRow_Barbell.png' %}"
-                     style="height: 40%; width: 40%;" />
-                <p style="word-wrap: break-word; max-width: 50ch; color:rgb(170,170,170);">
-                    "Her skal du have 10-15 reps i begge øvelser,
-                    begge øvelser køres med kontinuerligt tempo,
-                    hverken langsomt eller hurtigt, men et godt "normalt" tempo."</p>
-            </div>
-        </td>
-        <td>
-            <table>
-                {% include "includes/table_workout.html" with
-                exercise_name="FloorPressDumbbell_BentOverRowBarbell" %}
-            </table>
-        </td>
-    </tr>
-</table>
+<div class="row">
+    <div class="column">
+        <table>
+            <tr>
+                <td>
+                    <b>Superset</b>
+                    <p>Floor Press, Dumbbell: 4 sæt x 10-15 reps<br>
+                        Bent Over Row, Barbell: 4 sæt x 10-15 reps</p>
+                    <div class="imgwithtext">
+                        <img src="{% static '/images/workout_illustration/FloorPress_Dumbbell.png' %}"
+                             style="height: 40%; width: 40%;" />
+                    </div>
+                    <div class="imgwithtext">
+                        <img src="{% static '/images/workout_illustration/BentOverRow_Barbell.png' %}"
+                             style="height: 40%; width: 40%;" />
+                        <p style="word-wrap: break-word; max-width: 50ch; color:rgb(170,170,170);">
+                            "Her skal du have 10-15 reps i begge øvelser,
+                            begge øvelser køres med kontinuerligt tempo,
+                            hverken langsomt eller hurtigt, men et godt "normalt" tempo."</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="column">
+        {% include "includes/table_workout.html" with
+        exercise_name="FloorPressDumbbell_BentOverRowBarbell" %}
+    </div>
+</div>
 <br>
 
-<body>
-<table>
-    <tr>
-        <td>
-            <b>Superset</b>
-                <p>Shoulder Press, Dumbbell, Standing: 4 sæt x 8-12 reps<br>
-                Lateral Raise, Dumbbell: 4 sæt x 10-12 reps</p>
-            <div class="imgwithtext">
-                <img src="{% static '/images/workout_illustration/ShoulderPress_Dumbbell.png' %}"
-                     style="height: 30%; width: 30%;" />
-            </div>
-            <div class="imgwithtext">
-                <img src="{% static '/images/workout_illustration/LateralRaise_Dumbbell.png' %}"
-                     style="height: 40%; width: 40%;" />
-                <p style="word-wrap: break-word; max-width: 50ch; color:rgb(170,170,170);">
-                    "Her der skal du have 8-12 reps med stående skulderpres,
-                    og her der skal du presse eksplosivt op &
-                    kontrollerer den excentriske fase (På vej i bevægelsen)
-                    her bruger du ca. 2-3 sekunder ned, pauser kort i bunden
-                    inden du eksploderer op igen. Herefter laver du 10-12
-                    reps i lateral raises, og der skal du kører "normalt"
-                    tempo op, men holde godt igen på vej ned i den excentriske fase!"</p>
-            </div>
-        </td>
-        <td>
-            <table>
-                {% include "includes/table_workout.html"  with
-                exercise_name="ShoulderPressDumbbellStanding_LateralRaiseDumbbell" %}
-            </table>
-        </td>
-    </tr>
-</table>
-</body>
+<div class="row">
+    <div class="column">
+        <table>
+            <tr>
+                <td>
+                    <b>Superset</b>
+                    <p>Shoulder Press, Dumbbell, Standing: 4 sæt x 8-12 reps<br>
+                        Lateral Raise, Dumbbell: 4 sæt x 10-12 reps</p>
+                    <div class="imgwithtext">
+                        <img src="{% static '/images/workout_illustration/ShoulderPress_Dumbbell.png' %}"
+                             style="height: 30%; width: 30%;" />
+                    </div>
+                    <div class="imgwithtext">
+                        <img src="{% static '/images/workout_illustration/LateralRaise_Dumbbell.png' %}"
+                             style="height: 40%; width: 40%;" />
+                        <p style="word-wrap: break-word; max-width: 50ch; color:rgb(170,170,170);">
+                            "Her der skal du have 8-12 reps med stående skulderpres,
+                            og her der skal du presse eksplosivt op &
+                            kontrollerer den excentriske fase (På vej i bevægelsen)
+                            her bruger du ca. 2-3 sekunder ned, pauser kort i bunden
+                            inden du eksploderer op igen. Herefter laver du 10-12
+                            reps i lateral raises, og der skal du kører "normalt"
+                            tempo op, men holde godt igen på vej ned i den excentriske fase!"</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="column">
+        {% include "includes/table_workout.html"  with
+        exercise_name="ShoulderPressDumbbellStanding_LateralRaiseDumbbell" %}
+    </div>
+</div>
 <br>
 
-<body>
-<table>
-    <tr>
-        <td>
-            <b>Superset</b>
-                <p>Bicep Curl, Standing, Dumbbell: 4 sæt x 10-12 reps<br>
-                Tricep Extension, Dumbbell, Lying: 4 sæt x 10-12 reps</p>
-            <div class="imgwithtext">
-                <img src="{% static '/images/workout_illustration/BicepCurlStanding_Dumbbell.png' %}"
-                     style="height: 30%; width: 30%;" />
-            </div>
-            <div class="img-with-text">
-                <img src="{% static '/images/workout_illustration/TricepExtension_Dumbbell.png' %}"
-                     style="height: 40%; width: 40%;" />
-                <p style="word-wrap: break-word; max-width: 50ch; color:rgb(170,170,170);">
-                    "TIl armtøjet! 10-12 reps i begge øvelser og dine triceps
-                    extensions kan du SAGTENS lave liggende på gulvet.
-                    Bicep curl:
-                    Squeeze op og spænd i armen på toppen & brug ca.
-                    2 sekunder ned i den excentriske fase.
-                    Tricep extensions:
-                    Kontrollér vægten på vej ned mod dit hoved (Bag dit hoved)
-                    og squeeze så alt op du kan i dine triceps og hold spændet på toppen kort.
-                    Her kan du også bruge din stang."</p>
-            </div>
-        </td>
-        <td>
-            <table align="right">
-                {% include "includes/table_workout.html"  with
-                exercise_name="BicepCurlStandingDumbbell_TricepExtensionDumbbellLying" %}
-            </table>
-        </td>
-    </tr>
-</table>
-</body>
+
+<div class="row">
+    <div class="column">
+        <table>
+            <tr>
+                <td>
+                    <b>Superset</b>
+                    <p>Bicep Curl, Standing, Dumbbell: 4 sæt x 10-12 reps<br>
+                        Tricep Extension, Dumbbell, Lying: 4 sæt x 10-12 reps</p>
+                    <div class="imgwithtext">
+                        <img src="{% static '/images/workout_illustration/BicepCurlStanding_Dumbbell.png' %}"
+                             style="height: 30%; width: 30%;" />
+                    </div>
+                    <div class="img-with-text">
+                        <img src="{% static '/images/workout_illustration/TricepExtension_Dumbbell.png' %}"
+                             style="height: 40%; width: 40%;" />
+                        <p style="word-wrap: break-word; max-width: 50ch; color:rgb(170,170,170);">
+                            "TIl armtøjet! 10-12 reps i begge øvelser og dine triceps
+                            extensions kan du SAGTENS lave liggende på gulvet.
+                            Bicep curl:
+                            Squeeze op og spænd i armen på toppen & brug ca.
+                            2 sekunder ned i den excentriske fase.
+                            Tricep extensions:
+                            Kontrollér vægten på vej ned mod dit hoved (Bag dit hoved)
+                            og squeeze så alt op du kan i dine triceps og hold spændet på toppen kort.
+                            Her kan du også bruge din stang."</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="column">
+        {% include "includes/table_workout.html"  with
+        exercise_name="BicepCurlStandingDumbbell_TricepExtensionDumbbellLying" %}
+    </div>
+</div>
+<br>
 <br>
 
-<body>
-<table>
-    <tr>
-        <td>
-            <b>Bent Over Row, Dumbbell</b>
-            <p>4 sæt x 12-14 reps</p>
-            <div class="imgwithtext">
-                <img src="{% static '/images/workout_illustration/BentOverRow_Dumbbell.png' %}"
-                     style="height: 45%; width: 45%;" />
-                <p style="word-wrap: break-word; max-width: 50ch; color:rgb(170,170,170);">
-                    "Kør 12-14 reps her, du skal helt ned og strække og helt op og klemme!"</p>
-            </div>
-        </td>
-        <td>
-            <table>
-                {% include "includes/table_workout.html"  with
-                exercise_name="BentOverRowDumbbell" %}
-            </table>
-        </td>
-    </tr>
-</table>
-</body>
+<div class="row">
+    <div class="column">
+        <table>
+            <tr>
+                <td>
+                    <b>Bent Over Row, Dumbbell</b>
+                    <p>4 sæt x 12-14 reps</p>
+                    <div class="imgwithtext">
+                        <img src="{% static '/images/workout_illustration/BentOverRow_Dumbbell.png' %}"
+                             style="height: 45%; width: 45%;" />
+                        <p style="word-wrap: break-word; max-width: 50ch; color:rgb(170,170,170);">
+                            "Kør 12-14 reps her, du skal helt ned og strække og helt op og klemme!"</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="column">
+        {% include "includes/table_workout.html"  with
+        exercise_name="BentOverRowDumbbell" %}
+    </div>
+</div>
 <br>
 
-<body>
-<table>
-    <tr>
-        <td>
-            <b>Crunch</b>
-            <p>5 sæt x 12-30 reps</p>
-            <div class="imgwithtext">
-                <img src="{% static '/images/workout_illustration/Crunch.png' %}"
-                     style="height: 45%; width: 45%;" />
-                <p style="word-wrap: break-word; max-width: 50ch; color:rgb(170,170,170);">
-                    "Sidste for i dag, og det bliver helt alm. mavebøjninger,
-                    dog kan du OGSÅ svinge benene op på sofaen
-                    imens du ligger på gulvet, det ville gøre dem lidt svære.
-                    Du skal have alt fra 12-30 reps, dvs. "Så mange du kan" så
-                    tag så mange du nu engang kan og hold herefter 45 sek.
-                    så forfra, osv. til du har lavet 5 sæt i alt :)"</p>
-            </div>
-        </td>
-        <td>
-            <table>
-                {% include "includes/table_workout.html"  with
-                exercise_name="Crunch" %}
-            </table>
-        </td>
-    </tr>
-</table>
-</body>
-<br>
+
+<div class="row">
+    <div class="column">
+        <table>
+            <tr>
+                <td>
+                    <b>Crunch</b>
+                    <p>5 sæt x 12-30 reps</p>
+                    <div class="imgwithtext">
+                        <img src="{% static '/images/workout_illustration/Crunch.png' %}"
+                             style="height: 45%; width: 45%;" />
+                        <p style="word-wrap: break-word; max-width: 50ch; color:rgb(170,170,170);">
+                            "Sidste for i dag, og det bliver helt alm. mavebøjninger,
+                            dog kan du OGSÅ svinge benene op på sofaen
+                            imens du ligger på gulvet, det ville gøre dem lidt svære.
+                            Du skal have alt fra 12-30 reps, dvs. "Så mange du kan" så
+                            tag så mange du nu engang kan og hold herefter 45 sek.
+                            så forfra, osv. til du har lavet 5 sæt i alt :)"</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="column">
+        {% include "includes/table_workout.html"  with
+        exercise_name="Crunch" %}
+    </div>
+</div>
 <br>
 {% endblock content %}
