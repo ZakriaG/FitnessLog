@@ -3,6 +3,20 @@
 
 {% block content %}
 {% load static %}
+<style>
+html, body {
+    height: 100%;
+}
+table {
+  table-layout: fixed ;
+  width: 100% ;
+}
+td {
+  width: 25% ;
+}
+</style>
+
+
 
 <h1>Upper 1</h1>
 <body>
@@ -14,11 +28,11 @@
                 Bent Over Row, Barbell: 4 sæt x 10-15 reps</p>
             <div class="imgwithtext">
                 <img src="{% static '/images/workout_illustration/FloorPress_Dumbbell.png' %}"
-                      style="height: 80%; width: 80%;" />
+                      style="height: 40%; width: 40%;" />
             </div>
             <div class="imgwithtext">
                 <img src="{% static '/images/workout_illustration/BentOverRow_Barbell.png' %}"
-                     style="height: 90%; width: 90%;" />
+                     style="height: 40%; width: 40%;" />
                 <p style="word-wrap: break-word; max-width: 50ch; color:rgb(170,170,170);">
                     "Her skal du have 10-15 reps i begge øvelser,
                     begge øvelser køres med kontinuerligt tempo,
@@ -33,7 +47,6 @@
         </td>
     </tr>
 </table>
-</body>
 <br>
 
 <body>
@@ -45,11 +58,11 @@
                 Lateral Raise, Dumbbell: 4 sæt x 10-12 reps</p>
             <div class="imgwithtext">
                 <img src="{% static '/images/workout_illustration/ShoulderPress_Dumbbell.png' %}"
-                     style="height: 60%; width: 60%;" />
+                     style="height: 30%; width: 30%;" />
             </div>
-            <div class="img-with-text">
+            <div class="imgwithtext">
                 <img src="{% static '/images/workout_illustration/LateralRaise_Dumbbell.png' %}"
-                     style="height: 80%; width: 80%;" />
+                     style="height: 40%; width: 40%;" />
                 <p style="word-wrap: break-word; max-width: 50ch; color:rgb(170,170,170);">
                     "Her der skal du have 8-12 reps med stående skulderpres,
                     og her der skal du presse eksplosivt op &
@@ -78,13 +91,13 @@
             <b>Superset</b>
                 <p>Bicep Curl, Standing, Dumbbell: 4 sæt x 10-12 reps<br>
                 Tricep Extension, Dumbbell, Lying: 4 sæt x 10-12 reps</p>
-            <div class="img-with-text">
+            <div class="imgwithtext">
                 <img src="{% static '/images/workout_illustration/BicepCurlStanding_Dumbbell.png' %}"
-                     style="height: 60%; width: 60%;" />
+                     style="height: 30%; width: 30%;" />
             </div>
-            <div class="img-with-text"">
+            <div class="img-with-text">
                 <img src="{% static '/images/workout_illustration/TricepExtension_Dumbbell.png' %}"
-                     style="height: 90%; width: 90%;" />
+                     style="height: 40%; width: 40%;" />
                 <p style="word-wrap: break-word; max-width: 50ch; color:rgb(170,170,170);">
                     "TIl armtøjet! 10-12 reps i begge øvelser og dine triceps
                     extensions kan du SAGTENS lave liggende på gulvet.
@@ -98,7 +111,7 @@
             </div>
         </td>
         <td>
-            <table>
+            <table align="right">
                 {% include "includes/table_workout.html"  with
                 exercise_name="BicepCurlStandingDumbbell_TricepExtensionDumbbellLying" %}
             </table>
@@ -114,9 +127,9 @@
         <td>
             <b>Bent Over Row, Dumbbell</b>
             <p>4 sæt x 12-14 reps</p>
-            <div class="img-with-text">
+            <div class="imgwithtext">
                 <img src="{% static '/images/workout_illustration/BentOverRow_Dumbbell.png' %}"
-                     style="height: 70%; width: 70%;" />
+                     style="height: 45%; width: 45%;" />
                 <p style="word-wrap: break-word; max-width: 50ch; color:rgb(170,170,170);">
                     "Kør 12-14 reps her, du skal helt ned og strække og helt op og klemme!"</p>
             </div>
@@ -138,9 +151,9 @@
         <td>
             <b>Crunch</b>
             <p>5 sæt x 12-30 reps</p>
-            <div class="img-with-text">
+            <div class="imgwithtext">
                 <img src="{% static '/images/workout_illustration/Crunch.png' %}"
-                     style="height: 80%; width: 80%;" />
+                     style="height: 45%; width: 45%;" />
                 <p style="word-wrap: break-word; max-width: 50ch; color:rgb(170,170,170);">
                     "Sidste for i dag, og det bliver helt alm. mavebøjninger,
                     dog kan du OGSÅ svinge benene op på sofaen
