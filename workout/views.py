@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .forms import CreateNewWorkoutLog
 from .models import WorkOutLog
+from django.core.exceptions import ValidationError
+import re
 
 # Create your views here.
 def myview(request):
@@ -16,23 +18,24 @@ def workout(request):
 
 
 def workout_monday(response):
+    form = CreateNewWorkoutLog(response.POST)
     if response.method == "POST":
-        form = CreateNewWorkoutLog(response.POST)
         if form.is_valid():
+            print("is valid")
+            print(form.cleaned_data)
+            form_data = form.cleaned_data
             ExerciseName = response.POST.get('ExerciseName')
-            Set1Weight = form.cleaned_data["Set1Weight"]
-            Set2Weight = form.cleaned_data["Set2Weight"]
-            Set3Weight = form.cleaned_data["Set3Weight"]
-            Set4Weight = form.cleaned_data["Set4Weight"]
-            w = WorkOutLog(ExerciseName=ExerciseName,
-                           Set1Weight=Set1Weight,
-                           Set2Weight=Set2Weight,
-                           Set3Weight=Set3Weight,
-                           Set4Weight=Set4Weight)
-            w.save()
-        #return HttpResponseRedirect("/%i" %t.id)
-    else:
-        form = CreateNewWorkoutLog()
+            for set in form_data:
+                if set.startswith('Set'):
+                    print(re.findall(r'\d', set))
+                    SetNumber = re.findall(r'\d', set)[0]
+                    Weight=form_data[set]
+                    print(SetNumber)
+                    print(Weight)
+                    w = WorkOutLog(ExerciseName=ExerciseName,
+                                   SetNumber=SetNumber,
+                                   Weight=Weight)
+                    w.save()
     return render(response, "./workout/monday.html", {"form": form})
 
 
