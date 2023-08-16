@@ -17,26 +17,30 @@ def workout(request):
     return render(request, "./workout/baseWorkout.html")
 
 
-def workout_monday(response):
-    form = CreateNewWorkoutLog(response.POST)
-    if response.method == "POST":
+def workout_monday(request):
+    form = CreateNewWorkoutLog(request.POST)
+    if request.method == "POST":
+
         if form.is_valid():
-            print("is valid")
-            print(form.cleaned_data)
             form_data = form.cleaned_data
-            ExerciseName = response.POST.get('ExerciseName')
+            ExerciseName = request.POST.get('ExerciseName')
             for set in form_data:
                 if set.startswith('Set'):
-                    print(re.findall(r'\d', set))
                     SetNumber = re.findall(r'\d', set)[0]
                     Weight=form_data[set]
-                    print(SetNumber)
-                    print(Weight)
                     w = WorkOutLog(ExerciseName=ExerciseName,
                                    SetNumber=SetNumber,
                                    Weight=Weight)
                     w.save()
-    return render(response, "./workout/monday.html", {"form": form})
+        else:
+            print('her 1')
+            return render(request, "./workout/monday.html", {"workout_form": form})
+    else:
+        print('her')
+        form = CreateNewWorkoutLog()
+
+    print('her2')
+    return render(request, "./workout/monday.html", {"workout_form": form})
 
 
 def workout_tuesday(request):
