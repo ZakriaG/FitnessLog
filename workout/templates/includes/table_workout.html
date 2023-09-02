@@ -1,9 +1,11 @@
+{% load workout_extras %}
 <body oncontextmenu='return false' class='snippet-body' >
-<div class="container rounded mt-5 bg-white p-md-5">
+<div class="container rounded mt-5 bg-white p-md-5"> {% get_by_name exercise_name as form %}
     <div class="table-responsive">
-        <form method="POST" id="workout_form">
+        <form method="POST" id="{{ exercise_name}}">
+
         {% csrf_token %}
-            <input type="hidden" name="ExerciseName" value="{{ exercise_name }}">
+            <input type="hidden" name="{{ exercise_name }}-ExerciseName" value="{{ exercise_name }}">
         <table class="table" >
             <thead>
                 <tr>
@@ -18,9 +20,9 @@
                     <td class="pt-3 mt-1">1</td>
                     <td class="pt-3">11</td>
                     <td>
-                        <input id="set1" type="text" name="Set1Weight" value="{{workout_form.Set1Weight.value }}" style="color:black;" />
-                        {% if workout_form.Set1Weight.errors %}
-                            <div class="alert alert-danger">{{workout_form.Set1Weight.errors }}</div>
+                        <input id="{{ exercise_name }}-Set1Weight" type="text" name="{{ exercise_name }}-Set1Weight" value="{{ form.Set1Weight.value|default_if_none:''  }}" style="color:black;" />
+                        {% if form.errors.Set1Weight %}
+                            <div class="alert alert-danger">{{ form.errors.Set1Weight }}</div>
                         {% endif %}
                     </td>
                     <td class="pt-3">15</td>
@@ -32,9 +34,9 @@
                     <td class="pt-3">2</td>
                     <td class="pt-3">11</td>
                     <td>
-                        <input id="set2" type="text" name="Set2Weight" value="{{workout_form.Set2Weight.value  }}"  style="color:black;" />
-                        {% if workout_form.Set2Weight.errors %}
-                            <div class="alert alert-danger">{{ workout_form.Set2Weight.errors}}</div>
+                        <input id="{{ exercise_name }}-Set2Weight" type="text" name="{{ exercise_name }}-Set2Weight" value="{{ form.Set2Weight.value|default_if_none:'' }}"  style="color:black;" />
+                        {% if form.errors.Set2Weight %}
+                            <div class="alert alert-danger">{{ form.errors.Set2Weight }}</div>
                         {% endif %}
                     </td>
                     <td class="pt-3">15</td>
@@ -46,9 +48,9 @@
                     <td class="pt-3">3</td>
                     <td class="pt-3">11</td>
                     <td>
-                        <input id="set3" type="text" name="Set3Weight" value="{{workout_form.Set3Weight.value  }}"  style="color:black;" />
-                        {% if workout_form.Set3Weight.errors %}
-                            <div class="alert alert-danger">{{ workout_form.Set3Weight.errors}}</div>
+                        <input id="{{ exercise_name }}-Set3Weight" type="text" name="{{ exercise_name }}-Set3Weight" value="{{ form.Set3Weight.value|default_if_none:'' }}"  style="color:black;" />
+                        {% if form.errors.Set3Weight %}
+                            <div class="alert alert-danger">{{ form.errors.Set3Weight }}</div>
                         {% endif %}
                     </td>
                     <td class="pt-3">15</td>
@@ -58,11 +60,11 @@
                 </tr>
                 <tr class="bg-blue">
                     <td class="pt-3">4</td>
-                    <td class="pt-3">13</td>
+                    <td class="pt-3">18</td>
                     <td>
-                        <input id="set4" type="text" name="Set4Weight" value="{{workout_form.Set4Weight.value  }}"  style="color:black;" />
-                        {% if workout_form.Set4Weight.errors %}
-                            <div class="alert alert-danger">{{ workout_form.Set4Weight.errors }}</div>
+                        <input id="{{ exercise_name }}-Set4Weight" type="text" name="{{ exercise_name }}-Set4Weight" value="{{ form.Set4Weight.value|default_if_none:'' }}"  style="color:black;" />
+                        {% if  form.errors.Set4Weight  %}
+                            <div class="alert alert-danger">{{ form.errors.Set4Weight }}</div>
                         {% endif %}
                     </td>
                     <td class="pt-3">15</td>
@@ -71,13 +73,14 @@
          <tfoot>
                 <tr>
                     <td colspan="4">
-                        <button class="btn btn-primary" type="submit">Submit</button>
+                        <button class="btn btn-primary" type="submit" name="{{ exercise_name }}-submit">Submit</button>
                     </td>
                 </tr>
             </tfoot>
         </table>
             </form>
     </div>
+    <script type='text/javascript'></script>
 </div>
-<script type='text/javascript'></script>
 </body>
+

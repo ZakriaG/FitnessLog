@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'workout.apps.WorkoutConfig',
+    'workout.templatetags',
 ]
 
 MIDDLEWARE = [
