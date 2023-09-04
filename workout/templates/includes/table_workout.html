@@ -1,86 +1,88 @@
 {% load workout_extras %}
 <body oncontextmenu='return false' class='snippet-body' >
-<div class="container rounded mt-5 bg-white p-md-5"> {% get_by_name exercise_name as form %}
-    <div class="table-responsive">
-        <form method="POST" id="{{ exercise_name}}">
-
-        {% csrf_token %}
+   <div class="container rounded mt-5 bg-white p-md-5">
+      {% get_by_name exercise_name as form %}
+      <div class="table-responsive">
+         <form method="POST" id="{{ exercise_name}}">
+            {% csrf_token %}
             <input type="hidden" name="{{ exercise_name }}-ExerciseName" value="{{ exercise_name }}">
-        <table class="table" >
-            <thead>
-                <tr>
-                    <th scope="col">SET</th>
-                    <th scope="col">PREVIOUS</th>
-                    <th scope="col">KG</th>
-                    <th scope="col">REPS</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="bg-blue">
-                    <td class="pt-3 mt-1">1</td>
-                    <td class="pt-3">11</td>
-                    <td>
+            <table class="table" >
+               <thead>
+                  <tr>
+                     <th scope="col">SET</th>
+                     <th scope="col">PREVIOUS</th>
+                     <th scope="col">KG</th>
+                     <th scope="col">REPS</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr class="bg-blue">
+                     <td class="pt-3 mt-1">1</td>
+                     <td class="pt-3">11</td>
+                     <td>
                         <input id="{{ exercise_name }}-Set1Weight" type="text" name="{{ exercise_name }}-Set1Weight" value="{{ form.Set1Weight.value|default_if_none:''  }}" style="color:black;" />
                         {% if form.errors.Set1Weight %}
-                            <div class="alert alert-danger">{{ form.errors.Set1Weight }}</div>
+                        <div class="alert alert-danger">{{ form.errors.Set1Weight }}</div>
                         {% endif %}
-                    </td>
-                    <td class="pt-3">15</td>
-                </tr>
-                <tr id="spacing-row2">
-                    <td></td>
-                </tr>
-                <tr class="bg-blue">
-                    <td class="pt-3">2</td>
-                    <td class="pt-3">11</td>
-                    <td>
+                     </td>
+                     <td class="pt-3">15</td>
+                  </tr>
+                  <tr id="spacing-row2">
+                     <td></td>
+                  </tr>
+                  <tr class="bg-blue">
+                     <td class="pt-3">2</td>
+                     <td class="pt-3">11</td>
+                     <td>
                         <input id="{{ exercise_name }}-Set2Weight" type="text" name="{{ exercise_name }}-Set2Weight" value="{{ form.Set2Weight.value|default_if_none:'' }}"  style="color:black;" />
                         {% if form.errors.Set2Weight %}
-                            <div class="alert alert-danger">{{ form.errors.Set2Weight }}</div>
+                        <div class="alert alert-danger">{{ form.errors.Set2Weight }}</div>
                         {% endif %}
-                    </td>
-                    <td class="pt-3">15</td>
-                </tr>
-                <tr id="spacing-row3">
-                    <td></td>
-                </tr>
-                <tr class="bg-blue">
-                    <td class="pt-3">3</td>
-                    <td class="pt-3">11</td>
-                    <td>
+                     </td>
+                     <td class="pt-3">15</td>
+                  </tr>
+                  <tr id="spacing-row3">
+                     <td></td>
+                  </tr>
+                  <tr class="bg-blue">
+                     <td class="pt-3">3</td>
+                     <td class="pt-3">11</td>
+                     <td>
                         <input id="{{ exercise_name }}-Set3Weight" type="text" name="{{ exercise_name }}-Set3Weight" value="{{ form.Set3Weight.value|default_if_none:'' }}"  style="color:black;" />
                         {% if form.errors.Set3Weight %}
-                            <div class="alert alert-danger">{{ form.errors.Set3Weight }}</div>
+                        <div class="alert alert-danger">{{ form.errors.Set3Weight }}</div>
                         {% endif %}
-                    </td>
-                    <td class="pt-3">15</td>
-                </tr>
-                <tr id="spacing-row4">
-                    <td></td>
-                </tr>
-                <tr class="bg-blue">
-                    <td class="pt-3">4</td>
-                    <td class="pt-3">18</td>
-                    <td>
+                     </td>
+                     <td class="pt-3">15</td>
+                  </tr>
+                  <tr id="spacing-row4">
+                     <td></td>
+                  </tr>
+                  <tr class="bg-blue">
+                     <td class="pt-3">4</td>
+                     <td class="pt-3">18</td>
+                     <td>
                         <input id="{{ exercise_name }}-Set4Weight" type="text" name="{{ exercise_name }}-Set4Weight" value="{{ form.Set4Weight.value|default_if_none:'' }}"  style="color:black;" />
                         {% if  form.errors.Set4Weight  %}
-                            <div class="alert alert-danger">{{ form.errors.Set4Weight }}</div>
+                        <div class="alert alert-danger">{{ form.errors.Set4Weight }}</div>
                         {% endif %}
-                    </td>
-                    <td class="pt-3">15</td>
-                </tr>
-            </tbody>
-         <tfoot>
-                <tr>
-                    <td colspan="4">
+                     </td>
+                     <td class="pt-3">15</td>
+                  </tr>
+               </tbody>
+               <tfoot>
+                  <tr>
+                     <td colspan="4">
                         <button class="btn btn-primary" type="submit" name="{{ exercise_name }}-submit">Submit</button>
-                    </td>
-                </tr>
-            </tfoot>
-        </table>
-            </form>
-    </div>
-    <script type='text/javascript'></script>
-</div>
+                     </td>
+                  </tr>
+               </tfoot>
+            </table>
+         </form>
+      </div>
+      <script type='text/javascript'></script>
+      <div id="{{ exercise_name }}-messages">
+         {% include 'includes/message.html' %}
+      </div>
+   </div>
 </body>
-

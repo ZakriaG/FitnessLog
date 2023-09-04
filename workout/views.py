@@ -4,6 +4,7 @@ from .models import WorkOutLog
 from django.core.exceptions import ValidationError
 import re
 from django.template import Context, Template
+from django.contrib import messages
 
 # Create your views here.
 def myview(request):
@@ -24,10 +25,12 @@ def workout_monday(request):
     form=CreateNewWorkoutLog()
     if request.method == "POST":
         ExerciseName = [key for key in request.POST if key.endswith("-ExerciseName")][0].split("-")[0]
+        print(f'ExerciseName = {ExerciseName}')
         form = CreateNewWorkoutLog(request.POST, prefix=ExerciseName)
-
         if form.is_valid():
             form_data = form.cleaned_data
+            print(form_data)
+            print(ExerciseName)
             for set in form_data:
                 if set.startswith('Set'):
                     SetNumber = re.findall(r'\d', set)[0]
@@ -36,10 +39,10 @@ def workout_monday(request):
                                    SetNumber=SetNumber,
                                    Weight=Weight)
                     w.save()
-            #return render(request, "./workout/monday.html", {'form': form})
+            messages.success(request, f'Form submitted successfully.', extra_tags=ExerciseName)            #return render(request, "./workout/monday.html", {'form': form})
     else:
         form = CreateNewWorkoutLog()
-
+    print(f'form = {form}')
     return render(request, "./workout/monday.html", {ExerciseName: form})
 
 
