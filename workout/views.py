@@ -20,17 +20,19 @@ def workout(request):
 
 
 def workout_monday(request):
-    newformName = ""
     ExerciseName = ""
     form=CreateNewWorkoutLog()
     if request.method == "POST":
-        ExerciseName = [key for key in request.POST if key.endswith("-ExerciseName")][0].split("-")[0]
+        ExerciseName = [key for key in request.POST if key.endswith("-ExerciseName1")][0].split("-")[0]#.split("_")
         print(f'ExerciseName = {ExerciseName}')
         form = CreateNewWorkoutLog(request.POST, prefix=ExerciseName)
+        for boundfield in form:
+            print(f'lol = {boundfield}')
+        #print(form)
         if form.is_valid():
+            print(f'Is valid')
             form_data = form.cleaned_data
-            print(form_data)
-            print(ExerciseName)
+            #print(form_data)
             for set in form_data:
                 if set.startswith('Set'):
                     SetNumber = re.findall(r'\d', set)[0]
@@ -39,10 +41,15 @@ def workout_monday(request):
                                    SetNumber=SetNumber,
                                    Weight=Weight)
                     w.save()
-            messages.success(request, f'Form submitted successfully.', extra_tags=ExerciseName)            #return render(request, "./workout/monday.html", {'form': form})
+            messages.success(request, f'Form submitted successfully.',
+                             extra_tags=ExerciseName)
+            #form.save()
+        else:
+            print("lol")
+            #print(form.errors)
     else:
         form = CreateNewWorkoutLog()
-    print(f'form = {form}')
+    #print(form)
     return render(request, "./workout/monday.html", {ExerciseName: form})
 
 

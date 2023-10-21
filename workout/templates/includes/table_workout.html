@@ -3,19 +3,20 @@
    <div class="container rounded mt-5 bg-white p-md-5">
       {% get_by_name exercise_name as form %}
       <div class="table-responsive">
-         <form method="POST" id="{{ exercise_name1}}_{{ exercise_name2}}">
+         <form method="POST" id="id_{{ exercise_name1 }}_{{ exercise_name2 }}">
             {% csrf_token %}
-            <input type="hidden" name="{{ exercise_name1}}_{{ exercise_name2}}-ExerciseName" value="{{ exercise_name1}}_{{ exercise_name2}}">
+            <input type="hidden" name="{{ exercise_name1 }}_{{ exercise_name2 }}-ExerciseName1" value="{{ exercise_name1 }}">
+            <input type="hidden" name="{{ exercise_name1 }}_{{ exercise_name2 }}-ExerciseName2" value="{{ exercise_name2 }}">
             <table class="table" >
                <thead>
                   <tr>
                      <th scope="col">SET</th>
                      <th scope="col">PREVIOUS</th>
-                     <th scope="col">{{ exercise_name1}} (kg)</th>
+                     <th scope="col">{{ exercise_name1 }} (kg)</th>
                       {% if SuperSet == "yes" %}
                      <th scope="col">{{ exercise_name2}} (kg)</th> <!-- Add this column conditionally -->
                      {% endif %}
-                     <th scope="col">REPS</th>
+                     <th scope="col">AI reps counter*</th>
                   </tr>
                </thead>
                <tbody>
@@ -23,16 +24,16 @@
                      <td class="pt-3 mt-1">1</td>
                      <td class="pt-3">11</td>
                      <td>
-                        <input id="{{ exercise_name1 }}-Set1Weight" type="text" name="{{ exercise_name1 }}-Set1Weight" value="{{ form.Set1Weight.value|default_if_none:''  }}" style="color:black;" />
-                        {% if form.errors.Set1Weight %}
-                        <div class="alert alert-danger">{{ form.errors.Set1Weight }}</div>
+                        <input id="id_{{ exercise_name1 }}_{{ exercise_name2 }}-Set1Weight1" type="text" name="{{ exercise_name1 }}_{{ exercise_name2 }}-Set1Weight1" value="{{ form.Set1Weight1.value|default_if_none:''  }}" style="color:black;" />
+                         {% if form.errors.Set1Weight1 %}
+                        <div class="alert alert-danger">{{ form.errors.Set1Weight1 }}</div>
                         {% endif %}
                      </td>
                       {% if SuperSet == "yes" %}
                      <td>
-                        <input id="{{ exercise_name2 }}-Set1Weight" type="text" name="{{ exercise_name2 }}-Set1Weight" value="{{ form.Set1Weight.value|default_if_none:''  }}" style="color:black;" />
-                        {% if form.errors.Set1Weight %}
-                        <div class="alert alert-danger">{{ form.errors.Set1Weight }}</div>
+                        <input id="id_{{ exercise_name1 }}_{{ exercise_name2 }}-Set1Weight2" type="text" name="{{ exercise_name1 }}_{{ exercise_name2 }}-Set1Weight2" value="{{ form.Set1Weight2.value|default_if_none:''  }}" style="color:black;" />
+                        {% if form.errors.Set1Weight2 %}
+                        <div class="alert alert-danger">{{ form.errors.Set1Weight2 }}</div>
                         {% endif %}
                      </td>
                      {% endif %}
@@ -45,16 +46,16 @@
                      <td class="pt-3">2</td>
                      <td class="pt-3">11</td>
                      <td>
-                        <input id="{{ exercise_name1 }}-Set2Weight" type="text" name="{{ exercise_name1 }}-Set2Weight" value="{{ form.Set2Weight.value|default_if_none:'' }}"  style="color:black;" />
-                        {% if form.errors.Set2Weight %}
-                        <div class="alert alert-danger">{{ form.errors.Set2Weight }}</div>
+                        <input id="id_{{ exercise_name1 }}_{{ exercise_name2 }}-Set2Weight1" type="text" name="{{ exercise_name1 }}_{{ exercise_name2 }}-Set2Weight1" value="{{ form.Set2Weight1.value|default_if_none:'' }}"  style="color:black;" />
+                        {% if form.errors.Set2Weight1 %}
+                        <div class="alert alert-danger">{{ form.errors.Set2Weight1 }}</div>
                         {% endif %}
                      </td>
                       {% if SuperSet == "yes" %}
                      <td>
-                        <input id="{{ exercise_name2 }}-Set2Weight" type="text" name="{{ exercise_name2 }}-Set2Weight" value="{{ form.Set2Weight.value|default_if_none:''  }}" style="color:black;" />
-                        {% if form.errors.Set2Weight %}
-                        <div class="alert alert-danger">{{ form.errors.Set2Weight }}</div>
+                        <input id="id_{{ exercise_name1 }}_{{ exercise_name2 }}-Set2Weight2" type="text" name="{{ exercise_name1 }}_{{ exercise_name2 }}-Set2Weight2" value="{{ form.Set2Weight2.value|default_if_none:''  }}" style="color:black;" />
+                        {% if form.errors.Set2Weight2 %}
+                        <div class="alert alert-danger">{{ form.errors.Set2Weight2 }}</div>
                         {% endif %}
                      </td>
                      {% endif %}
@@ -67,16 +68,16 @@
                      <td class="pt-3">3</td>
                      <td class="pt-3">11</td>
                      <td>
-                        <input id="{{ exercise_name1 }}-Set3Weight" type="text" name="{{ exercise_name1 }}-Set3Weight" value="{{ form.Set3Weight.value|default_if_none:'' }}"  style="color:black;" />
-                        {% if form.errors.Set3Weight %}
-                        <div class="alert alert-danger">{{ form.errors.Set3Weight }}</div>
+                        <input id="id_{{ exercise_name1 }}_{{ exercise_name2 }}-Set3Weight1" type="text" name="{{ exercise_name1 }}_{{ exercise_name2 }}-Set3Weight1" value="{{ form.Set3Weight1.value|default_if_none:'' }}"  style="color:black;" />
+                        {% if form.errors.Set3Weight1 %}
+                        <div class="alert alert-danger">{{ form.errors.Set3Weight1 }}</div>
                         {% endif %}
                      </td>
                       {% if SuperSet == "yes" %}
                      <td>
-                        <input id="{{ exercise_name3 }}-Set3Weight" type="text" name="{{ exercise_name3 }}-Set3Weight" value="{{ form.Set3Weight.value|default_if_none:''  }}" style="color:black;" />
-                        {% if form.errors.Set3Weight %}
-                        <div class="alert alert-danger">{{ form.errors.Set3Weight }}</div>
+                        <input id="id_{{ exercise_name1 }}_{{ exercise_name2 }}-Set3Weight2" type="text" name="{{ exercise_name1 }}_{{ exercise_name2 }}-Set3Weight2" value="{{ form.Set3Weight2.value|default_if_none:''  }}" style="color:black;" />
+                        {% if form.errors.Set3Weight2 %}
+                        <div class="alert alert-danger">{{ form.errors.Set3Weight2 }}</div>
                         {% endif %}
                      </td>
                      {% endif %}
@@ -89,16 +90,16 @@
                      <td class="pt-3">4</td>
                      <td class="pt-3">18</td>
                      <td>
-                        <input id="{{ exercise_name1 }}-Set4Weight" type="text" name="{{ exercise_name1 }}-Set4Weight" value="{{ form.Set4Weight.value|default_if_none:'' }}"  style="color:black;" />
-                        {% if  form.errors.Set4Weight  %}
-                        <div class="alert alert-danger">{{ form.errors.Set4Weight }}</div>
+                        <input id="id_{{ exercise_name1 }}_{{ exercise_name2 }}-Set4Weight1" type="text" name="{{ exercise_name1 }}_{{ exercise_name2 }}-Set4Weight1" value="{{ form.Set4Weight1.value|default_if_none:'' }}"  style="color:black;" />
+                        {% if  form.errors.Set4Weight1  %}
+                        <div class="alert alert-danger">{{ form.errors.Set4Weight1 }}</div>
                         {% endif %}
                      </td>
                       {% if SuperSet == "yes" %}
                      <td>
-                        <input id="{{ exercise_name4 }}-Set4Weight" type="text" name="{{ exercise_name4 }}-Set4Weight" value="{{ form.Set4Weight.value|default_if_none:''  }}" style="color:black;" />
-                        {% if form.errors.Set4Weight %}
-                        <div class="alert alert-danger">{{ form.errors.Set4Weight }}</div>
+                        <input id="id_{{ exercise_name1 }}_{{ exercise_name2 }}-Set4Weight2" type="text" name="{{ exercise_name1 }}_{{ exercise_name2 }}-Set4Weight2" value="{{ form.Set4Weight2.value|default_if_none:''  }}" style="color:black;" />
+                        {% if form.errors.Set4Weight2 %}
+                        <div class="alert alert-danger">{{ form.errors.Set4Weight2 }}</div>
                         {% endif %}
                      </td>
                      {% endif %}
@@ -108,7 +109,7 @@
                <tfoot>
                   <tr>
                      <td colspan="4">
-                        <button class="btn btn-primary" type="submit" name="{{ exercise_name }}-submit">Submit</button>
+                        <button class="btn btn-primary" type="submit" name="{{ exercise_name1 }}_{{ exercise_name2 }}-submit">Submit</button>
                      </td>
                   </tr>
                </tfoot>
@@ -116,7 +117,10 @@
          </form>
       </div>
       <script type='text/javascript'></script>
-      <div id="{{ exercise_name }}-messages">
+      {% if message.extra_tags == exercise_name1 %}
+         {{ exercise_name2 }}
+      {% endif %}
+      <div id="{{ exercise_name1 }}_{{ exercise_name2 }}-messages">
          {% include 'includes/message.html' %}
       </div>
    </div>
