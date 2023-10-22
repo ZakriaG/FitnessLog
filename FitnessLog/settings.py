@@ -13,6 +13,7 @@ import re
 from django.template import base
 from pathlib import Path
 import os
+import requests
 from dotenv import load_dotenv
 from django.contrib.messages import constants as messages
 
@@ -34,10 +35,20 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = True
 
 HOST_IP = os.getenv('HOST_IP')
-ALLOWED_HOSTS = [HOST_IP]
+ALLOWED_HOSTS = [HOST_IP,'.eu-central-1.elb.amazonaws.com']
+
+try:
+    EC2_PRIVATE_IP = requests.get('http://169.254.169.254/latest/meta-data/local-ipv4&#8217', timeout = 0.01).text
+except requests.exceptions.RequestException:
+    pass
+
+if EC2_PRIVATE_IP:
+    ALLOWED_HOSTS.append(EC2_PRIVATE_IP)
+
+
+
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
