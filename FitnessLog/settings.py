@@ -34,8 +34,10 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-HOST_IP = os.getenv('HOST_IP')
-ALLOWED_HOSTS = [HOST_IP,'.eu-central-1.elb.amazonaws.com']
+HOST_IP = os.getenv('HOST_IP') # In case the web-app is hosted in a server
+
+ALLOWED_HOSTS = [HOST_IP,'.eu-central-1.elb.amazonaws.com','127.0.0.1']
+EC2_PRIVATE_IP = None
 
 try:
     EC2_PRIVATE_IP = requests.get('http://169.254.169.254/latest/meta-data/local-ipv4&#8217', timeout = 0.01).text
